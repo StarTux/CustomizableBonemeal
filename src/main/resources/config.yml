@@ -1,0 +1,56 @@
+MaxSelections: 8
+Plants:
+  Sunflower:
+    Material: double_plant
+    Data: 0
+  Lilac:
+    Material: double_plant
+    Data: 1
+  DoubleTallgrass:
+    Material: double_plant
+    Data: 2
+  LargeFern:
+    Material: double_plant
+    Data: 3
+  RoseBush:
+    Material: double_plant
+    Data: 4
+  Peony:
+    Material: double_plant
+    Data: 5
+  Grass:
+    Material: long_grass
+    Data: 1
+  Fern:
+    Material: long_grass
+    Data: 2
+  Dandelion:
+    Material: yellow_flower
+    Data: 0
+  Poppy:
+    Material: red_rose
+    Data: 0
+  BlueOrchid:
+    Material: red_rose
+    Data: 1
+  Allium:
+    Material: red_rose
+    Data: 2
+  AzureBluet:
+    Material: red_rose
+    Data: 3
+  RedTulip:
+    Material: red_rose
+    Data: 4
+  OrangeTulip:
+    Material: red_rose
+    Data: 5
+  WhiteTulip:
+    Material: red_rose
+    Data: 6
+  PinkTulip:
+    Material: red_rose
+    Data: 7
+  OxeyeDaisy:
+    Material: red_rose
+    Data: 8
