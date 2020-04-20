@@ -2,6 +2,7 @@ package com.cavetale.customizablebonemeal;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -57,6 +58,7 @@ final class EventListener implements Listener {
             if (event.isCancelled()) return;
             event.setCancelled(true);
             int r = 3;
+            int amount = 0;
             for (int dz = -r; dz <= r; dz += 1) {
                 for (int dx = -r; dx <= r; dx += 1) {
                     for (int dy = -r; dy <= r; dy += 1) {
@@ -64,9 +66,14 @@ final class EventListener implements Listener {
                         if (grassBlock.getType() != Material.GRASS) continue;
                         if (plugin.random.nextInt(2) > 0) continue;
                         Plant plant = plants.get(plugin.random.nextInt(plants.size()));
-                        plugin.plants.plant(player, grassBlock, plant);
+                        if (plugin.plants.plant(player, grassBlock, plant)) {
+                            amount += 1;
+                        }
                     }
                 }
+            }
+            if (amount > 0 && player.getGameMode() != GameMode.CREATIVE) {
+                hand.setAmount(hand.getAmount() - 1);
             }
         }
     }
