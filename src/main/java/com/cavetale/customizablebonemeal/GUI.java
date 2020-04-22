@@ -15,6 +15,7 @@ import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -78,8 +79,8 @@ public final class GUI implements InventoryHolder {
         clicks.put(slot, callback);
     }
 
-    public void open(Player player) {
-        player.openInventory(inventory);
+    public InventoryView open(Player player) {
+        return player.openInventory(inventory);
     }
 
     public void clear() {

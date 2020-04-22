@@ -61,7 +61,9 @@ public final class Selections {
         GUI gui = new GUI(plugin);
         gui.createInventory(size, ChatColor.BLUE + "Bonemeal Plants");
         makeGUI(player, gui, plants);
-        gui.open(player);
+        if (null == gui.open(player)) {
+            plugin.bonemealCommand.showMenu(player);
+        }
     }
 
     void makeGUI(Player player, GUI gui, List<Plant> plants) {
@@ -99,6 +101,10 @@ public final class Selections {
                         if (selection.plants.size() < maxSelections) {
                             selection.plants.add(plant.key);
                             gui.dirty = true;
+                        } else {
+                            player.sendMessage(ChatColor.RED
+                                               + "You can only select "
+                                               + maxSelections + "!");
                         }
                     }
                     makeGUI(player, gui, plants);

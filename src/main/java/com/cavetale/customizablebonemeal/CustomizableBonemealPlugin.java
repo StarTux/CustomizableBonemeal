@@ -13,12 +13,14 @@ public final class CustomizableBonemealPlugin extends JavaPlugin {
     final Json json = new Json(this);
     final Random random = ThreadLocalRandom.current();
     final EventListener listener = new EventListener(this);
+    final BonemealCommand bonemealCommand = new BonemealCommand(this);
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         readConfig();
         getServer().getPluginManager().registerEvents(listener, this);
+        getCommand("bonemeal").setExecutor(bonemealCommand);
     }
 
     @Override

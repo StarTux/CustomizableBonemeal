@@ -62,6 +62,7 @@ final class EventListener implements Listener {
             for (int dz = -r; dz <= r; dz += 1) {
                 for (int dx = -r; dx <= r; dx += 1) {
                     for (int dy = -r; dy <= r; dy += 1) {
+                        if (dx * dx + dy * dy + dz * dz > r * r + 1) continue;
                         Block grassBlock = block.getRelative(dx, dy, dz);
                         if (grassBlock.getType() != Material.GRASS) continue;
                         if (plugin.random.nextInt(2) > 0) continue;
